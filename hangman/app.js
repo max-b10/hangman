@@ -14,7 +14,54 @@ window.addEventListener("keypress", (e) => {
   puzzleEl.textContent = game1.puzzle;
   guessesEl.textContent = game1.statusMessage;
 });
+// Fetch:
+getPuzzle("2")
+  .then((data) => {
+    console.log(data.puzzle);
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`);
+  });
+// Fetch:
+// getCountry("GB")
+//   .then((country) => {
+//     console.log(country.name);
+//   })
+//   .catch((err) => {
+//     console.log(`Error: ${err}`);
+//   });
 
+//Fetch with chained promises:
+getLocation()
+  .then((location) => {
+    return getCountry(location.country);
+  })
+  .then((country) => {
+    console.log(country.name);
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`);
+  });
+//Fetch:
+// getLocation()
+//   .then((location) => {
+//     console.log(
+//       `City: ${location.city}, Region: ${location.region} and Country Code: ${location.country}`
+//     );
+//   })
+//   .catch((err) => {
+//     console.log(`Error: ${err}`);
+//   });
+
+// Promise:
+// getCountry("GB").then(
+//   (country) => {
+//     console.log(country.name);
+//   },
+//   (err) => {
+//     console.log(`Error: ${err}`);
+//   }
+// );
 // Callback:
 // getPuzzle("2", (error, puzzle) => {
 //   if (error) {
@@ -23,16 +70,6 @@ window.addEventListener("keypress", (e) => {
 //     console.log(puzzle);
 //   }
 // });
-
-// Promise:
-getPuzzle("2").then(
-  (puzzle) => {
-    console.log(puzzle);
-  },
-  (err) => {
-    console.log(`Error: ${err}`);
-  }
-);
 // // Callback:
 // getCountry("GB", (error, country) => {
 //   if (error) {
@@ -41,13 +78,3 @@ getPuzzle("2").then(
 //     console.log(country.name);
 //   }
 // });
-
-// Promise:
-getCountry("GB").then(
-  (country) => {
-    console.log(country.name);
-  },
-  (err) => {
-    console.log(`Error: ${err}`);
-  }
-);
