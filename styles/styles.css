@@ -35,10 +35,16 @@
      font-weight: 300;
      margin-bottom: .8rem;
 }
+.instructions{
+     text-align: center;
+     margin-bottom: 5rem;
+}
 
  .puzzle {
      display: flex;
      margin-bottom: 4.8rem;
+     
+;
 }
 
  .button {
@@ -51,8 +57,15 @@
      font-weight: 300;
      padding: .8rem;
      transition: background .3s ease, color .3s ease;
+     border-radius: 5px;
 }
-
+#reset{
+     border-radius: 5px;
+     padding: .8rem;
+}
+#guesses{
+     text-align: center;
+}
  .button:hover {
      background: #5F3A87;
 }
