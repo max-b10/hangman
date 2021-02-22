@@ -43,7 +43,7 @@
  .puzzle {
      display: flex;
      margin-bottom: 4.8rem;
-     
+     justify-content: center
 ;
 }
 
