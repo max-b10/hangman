@@ -1,8 +1,14 @@
+const portfolioButton = document.querySelector(".return-button");
+
 const puzzleEl = document.querySelector("#puzzle");
 const guessesEl = document.querySelector("#guesses");
 let game1;
 // console.log(game1.getPuzzle());
 // console.log(game1.remainingGuesses);
+
+portfolioButton.addEventListener("click", () => {
+  window.location.replace("https://portfoliomax.netlify.app/");
+});
 
 window.addEventListener("keypress", (e) => {
   const guess = e.key;
